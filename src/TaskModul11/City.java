@@ -54,7 +54,7 @@ public class City {
         List<City> cityMapByLines = new ArrayList<>();
 
         for (int s = 0; s < cityStreetsArray.length; s++) {
-            for (int d = 1; d <= 60; d++) {
+            for (int d = 1; d <= 25; d++) { // Если задаю значение количества домов больше 25, вывод в консоль неполный.
                 for (int ap = 1; ap <= 120; ap++) {
                     cityMapByLines.add(new City(cityStreetsArray[s], d, ap));
                 }
@@ -65,19 +65,19 @@ public class City {
         Set<City> cityList = new TreeSet<>(new SortCity());
         cityList.addAll(cityMapByLines);
         for (City city : cityMapByLines) {
-            System.out.println(city);                                // Пытался сделать этот метод возвратным и передавать TreeSet<City> в Main ,но почемуто выводит в консоль только улицу по 0 индексу , с номером дома, квартиры все нормально. Но выводил только список по одной из 5 улиц.
+            System.out.println(city);                                // Пытался сделать этот метод возвратным и передавать TreeSet<City> в Main, но почему-то выводит в консоль только улицу по 0 индексу, с номером дома, квартиры все нормально. Но выводил только список по одной из 5 улиц.
         }
 
     }
-/**
-    public static void creatNewCiryList() {
+/** Метод с генерацией количества домов и квартир в них, сделал как вариацию.**/
+    public static void createNewCityList() {
         String[] cityStreetsArray = {"Savvinskaya", "Lugovaya", "Glavnaya", "Lenina", "Lesnaya"};
         List<City> cityMapByLines = new ArrayList<>();
-        for (int i = 0; i < 1500; i++) {
+        for (int i = 0; i < 150; i++) {
             int street = (int) (Math.random() * 4);
-            int house = (int) (Math.random() * 120);
-            int flat = (int) (Math.random() * 185);
-            cityMapByLines.add(new City(cityStreetsArray[street], house, flat)); // Если передаем все в перемешку метод compare() по названию улицы не сортирует почемуто!
+            int house = (int) (Math.random() * 25);
+            int flat = (int) (Math.random() * 120);
+            cityMapByLines.add(new City(cityStreetsArray[street], house, flat)); // Если передаем все в переменку метод compare() по названию улицы не сортирует почему-то!
         }
         for (City city: cityMapByLines) {
             System.out.println(city);
@@ -91,7 +91,7 @@ public class City {
 
 
         }
- **/
+
 
 
     }

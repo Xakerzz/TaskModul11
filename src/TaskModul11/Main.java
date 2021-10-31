@@ -4,7 +4,9 @@ package TaskModul11;
 public class Main {
 
     public static void main(String[] args) {
-      City.createCityList();
+
+        //City.createCityList();
+        City.createNewCityList();
 
     }
 
