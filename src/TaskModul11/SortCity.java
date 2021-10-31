@@ -16,7 +16,7 @@ public class SortCity implements Comparator<City> {
             if (o1.getNumberOfHouse()==o2.getNumberOfHouse()){
                 return o1.getNumberOfApartment()- o2.getNumberOfApartment();
             }else{
-                return o1.getNumberOfHouse()- o2.getNumberOfHouse();
+                return o1.getNumberOfHouse()- o2.getNumberOfHouse(); //Тут я сделал сортировку, но неуверен, что она работает правильно. В первом методе где я по очереди добавляю, все хорошо. Во втором, где все генерируется кроме улиц, по улице не сортирует!
             }
         }
 
